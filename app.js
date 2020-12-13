@@ -16,7 +16,7 @@ const clickHandler = async () => {
   if (actualText === "") {
     alert("please provide some text in input box...");
   } else {
-    await fetch(apiEndpoint)
+    await fetch(getUrl(actualText))
       .then((res) => res.json())
       .then((data) => (output.innerText = data.contents.translated))
       .catch(errorHandler);
